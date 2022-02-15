@@ -1,13 +1,14 @@
 const path = require("path");
-const querystring = require("querystring");
-
 const express = require("express");
 
 const app = express();
 
 app.set("port", process.env.PORT || 8080);
 
-// create a logger middleware to log millisecond timestamp before any request
+// STEP1: create a logger middleware to log millisecond timestamp before any request
+app.use((req, res, next) => {});
+
+// STEP2: create a middleware to catch request data and modify on request object
 app.use((req, res, next) => {});
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -22,9 +23,7 @@ app.post("/login", (req, res) => {
   console.log(body);
 });
 
-// if username was your name
-
-// create a logger to log millisecond timestamp after each request
+// STEP1: create a logger to log millisecond timestamp after each request
 
 app.listen(app.get("port"), () => {
   console.log(`http://localhost:${app.get("port")}`);
