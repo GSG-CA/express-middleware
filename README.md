@@ -1,4 +1,4 @@
-# express_middleware
+# Express Middlewares
 
 ## What is a middleware
 
@@ -75,6 +75,7 @@ Now it's your turn to work on other middlewares.
 - Run `npm install` to install all the dependencies
 - Run `npm run dev` to start the development server
 - Visit http://localhost:8080 to see the workshop app.
+- Follow instructions with comments on server.js
 
 ### Workshop tasks
 
@@ -119,6 +120,12 @@ That's somehow how `express.json()`, `express.urlencoded()` work.
 - in `POST/login` the previous step, we worked together to console.log the body, Now we want this route to direct me to the next route/middleware
 - in the next middleware check the user name from `req.user` (maybe we need to add something in `POST/login` 🤔 ), then check `user.name`, If it's your name `console.log("Hello user")` else if `console.log("Not authorized")`.
 
+4. **Using third party module (morgan)**
+
+- check morgan installed as a dev dependency in package.json
+- use morgan as a `morgan('dev')` to log request method|endpoint|response status (check resources)
+
 ## Resources
 
 - [Using middleware](https://expressjs.com/en/guide/using-middleware.html)
+- [morgan](https://www.npmjs.com/package/morgan)
