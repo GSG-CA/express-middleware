@@ -26,8 +26,7 @@ You could write your own middleware for Express.js, but most developers prefer t
 
 ## What does a middleware function look like?
 
-A middleware function from the [Express docs](https://expressjs.com/en/guide/using-middleware.html),
-There are several important things to point out here:
+There are several important things to point out here about [middleware function](https://expressjs.com/en/guide/using-middleware.html):
 
 - Middleware functions usually have 3 standard params `req`, `res`, and `next`. The first two are objects, the last is a function that will call the next middleware function, if there is one.
 - Usually there is a **middleware chain**, meaning a chain of functions that are called one after the other, with the last function sending the response back to the browser. So we get the request from the browser, make any modifications and data additions, and then send a response back.
@@ -82,7 +81,6 @@ Now it's your turn to work on other middlewares.
 1. **Logger middleware**
 
 - Add a logging middleware that logs millisecond timestamp `Date.now()` before any request to our server is handled.
-- Add a logging middleware that logs millisecond timestamp `Date.now()` after every request to our server (think where to put).
 
 2. **Parse request data**
 
@@ -104,12 +102,17 @@ Now it's your turn to work on other middlewares.
            const params = new URLSearchParams(allData);
            const name = params.get("name");
            const email = params.get("email");
+           /* 
+            maybe we can loop through params.entries()
+            https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/entries
+           
+          */
           });
 
   ```
 
   </p>
-  ```
+  
 
 </details>
 

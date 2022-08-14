@@ -12,6 +12,10 @@ app.set("port", process.env.PORT || 8080);
 // STEP2: create a middleware to catch request data and modify on request object
 // app.use((req, res, next) => {});
 
+
+// STEP4: use morgan as a third party middleware
+// app.use((req, res, next) => {});
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/login", (req, res) => {
@@ -19,13 +23,13 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  // from here try to get data from request.body, try to handle in separate middleware
+  /* from here try to get data from request.body, try to modify the request object in separate middleware,
+   So I can reach body here */
   const { body } = req;
   console.log(body);
   res.redirect("/");
 });
 
-// STEP1: create a logger to log millisecond timestamp after each request
 
 app.listen(app.get("port"), () => {
   console.log(`http://localhost:${app.get("port")}`);
